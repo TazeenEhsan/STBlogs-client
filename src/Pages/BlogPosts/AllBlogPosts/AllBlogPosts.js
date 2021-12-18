@@ -15,7 +15,7 @@ const AllBlogPosts = () => {
 
     return (
         <div>
-            <h1>All Blog Posts{blogs.length}</h1>
+            <h1>All Blogs</h1>
             {
                 blogs.map(blog => <SingleBlog blog={blog} own={''}></SingleBlog>)
             }
