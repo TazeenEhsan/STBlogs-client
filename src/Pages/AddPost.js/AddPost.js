@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import { useHistory } from 'react-router';
+// import useAuth from '../../hooks/useAuth';
+import useAuth from '../../hooks/useAuth'
 
 import './AddPost.css'
 
@@ -7,26 +9,29 @@ import './AddPost.css'
 
 const AddPost = () => {
     const nameRef = useRef();
-    const brandRef = useRef();
-    const priceRef = useRef();
+
     const descriptionRef = useRef();
     const imgRef = useRef();
 
     const history = useHistory();
+
+    const { user } = useAuth();
 
     const handleAddUser = e => {
 
 
 
         const name = nameRef.current.value;
-        const brand = brandRef.current.value;
-        const price = priceRef.current.value;
+
         const description = descriptionRef.current.value;
         const img = imgRef.current.value;
 
-        const newUser = { name, brand, price, description, img };
+        const userEmail = user.email;
 
-        fetch('https://mighty-inlet-20908.herokuapp.com/products', {
+        const newUser = { name, userEmail, description, img };
+
+
+        fetch('http://localhost:5000/blogposts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -39,7 +44,7 @@ const AddPost = () => {
                     // alert('Successfully added the user.')
                     // swal("Successfully added New Product!!!");
                     e.target.reset();
-                    history.push('/products')
+                    history.push('/home')
                 }
             })
 

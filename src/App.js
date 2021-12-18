@@ -9,6 +9,8 @@ import Header from './Pages/Home/Header/Header';
 
 import AuthProvider from './context/AuthProvider';
 import Login from './Pages/Login/Login';
+import AllBlogPosts from './Pages/BlogPosts/AllBlogPosts/AllBlogPosts';
+import PrivateRoute from './Pages/Login/PrivateRoute';
 
 
 
@@ -22,12 +24,29 @@ function App() {
           <Header></Header>
 
           <Switch>
+
+            {/* <Route exact path="/">
+              <AllBlogPosts></AllBlogPosts>
+            </Route>
+            <PrivateRoute path='/home'>
+              <Home></Home>
+            </PrivateRoute>
+
+            <PrivateRoute path='/login'>
+              <Login></Login>
+            </PrivateRoute>
+
+
+            <PrivateRoute path='/contact'>
+              <Contact></Contact>
+            </PrivateRoute> */}
+
             <Route exact path="/">
-              <Home></Home>
+              <Login></Login>
             </Route>
-            <Route path='/home'>
+            <PrivateRoute path='/home'>
               <Home></Home>
-            </Route>
+            </PrivateRoute>
 
             <Route path='/login'>
               <Login></Login>

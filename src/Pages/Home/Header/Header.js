@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 
 
@@ -8,7 +9,7 @@ import './Header.css'
 
 const Header = () => {
 
-
+    const { user, logOut } = useAuth();
 
     return (
         <div className="pt-5">
@@ -29,7 +30,13 @@ const Header = () => {
                     <Link className="nav-con-link" to="/home">Home</Link>
 
                     <Link className="nav-con-link" to="/contact">Contact Me</Link>
-                    <Link className="nav-con-link" to="/login">Login</Link>
+
+                    {
+                        user?.displayName ? <Link style={{ textDecoration: 'none' }} to='/home'><button onClick={logOut} style={{ border: '1px solid red', color: 'goldenrod' }}>Log Out</button></Link> :
+                            <Link className="nav-con-link" to="/login">Login</Link>
+                    }
+
+
 
 
                     {/* <a className="nav-con-link" href="https://drive.google.com/file/d/1_F5g7i09uyqXG7hfH6N1_DGPFryKpsCg/view?usp=sharing" target="_blank">Download Resume</a> */}
