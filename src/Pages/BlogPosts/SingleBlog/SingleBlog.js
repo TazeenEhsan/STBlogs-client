@@ -39,7 +39,7 @@ const SingleBlog = (props) => {
                     <small style={{ fontSize: '13px' }}>Posted:{blog?.postDate}</small>
                     <p>jjj:{blog.description}</p>
                     {
-                        (own === 'true') ? <button style={{ backgroundColor: 'red', color: 'white', padding: '10px', borderRadius: '5px' }} onClick={() => handleDelete(blog._id)}>Delete</button> : <p>no</p>
+                        (own === 'true') ? <button style={{ backgroundColor: 'red', color: 'white', padding: '10px', borderRadius: '5px' }} onClick={() => handleDelete(blog._id)}>Delete</button> : <p></p>
                     }
                 </div>
             </div>
