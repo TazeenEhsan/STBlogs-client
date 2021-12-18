@@ -31,7 +31,7 @@ const AddPost = () => {
         const newUser = { name, userEmail, description, img };
 
 
-        fetch('http://localhost:5000/blogposts', {
+        fetch('https://guarded-thicket-98440.herokuapp.com/blogposts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
