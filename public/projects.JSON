@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "name": "ST Car",
+        "description": {
+            "des1": "One can find and buy different types of Cars here.",
+            "des2": "Admin panel and User panel are implemented.",
+            "des3": "Users need to register/login to buy car or see user panel functionality"
+        },
+        "site": "https://st-cars.web.app/",
+        "technology": " ReactJS, NodeJS , ExpressJS, MongoDB , Firebase Authentication, Nested Routing.",
+        "img": "https://i.ibb.co/9srmYKn/car2.png"
+    },
+    {
+        "id": 2,
+        "name": "ST Toursim",
+        "description": {
+            "des1": "Users find Tour related services that we manage also see our packages and book any package.",
+            "des2": "After logging , an user can book packages only and also be able to all his/her bookings."
+        },
+        "site": "https://st-tourism.web.app/",
+        "technology": " ReactJS, NodeJS , ExpressJS, MongoDB , Firebase Authentication.",
+        "img": "https://i.ibb.co/vckHPyr/tour.png"
+    },
+    {
+        "id": 3,
+        "name": "Medical Center",
+        "description": {
+            "des1": " People can see medical services we provide and also can see our best doctors list.",
+            "des2": "Taking appointment option is also availavbe."
+        },
+        "site": "https://st-medical.web.app/",
+        "technology": " ReactJS , Firebase Authentication. ",
+        "img": "https://i.ibb.co/Lxgw6NR/hosptl.png"
+    }
+]
