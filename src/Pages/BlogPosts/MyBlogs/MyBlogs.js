@@ -19,7 +19,7 @@ const MyBlogs = () => {
 
     return (
         <div>
-            <h1>MyBlogs {filtered?.length}</h1>
+            <h1>My Blogs {filtered?.length}</h1>
 
             {
                 filtered.map(blog => <SingleBlog blog={blog} own={'true'}></SingleBlog>)
