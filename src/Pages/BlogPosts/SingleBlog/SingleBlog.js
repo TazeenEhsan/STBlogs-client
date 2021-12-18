@@ -28,15 +28,15 @@ const SingleBlog = (props) => {
     console.log(props);
     return (
         <div>
-            <div className="row" style={{ border: '2px solid goldenrod', marginBottom: '5px' }}>
-                <div className="col-lg-5" style={{ border: '2px solid green' }}>
-                    <img style={{ textAlign: 'start', width: '270px', height: '240px', border: '2px solid red' }} src={blog.img} alt="no image" />
+            <div className="row" style={{ paddingBottom: '5px', border: '2px solid black', marginBottom: '5px' }}>
+                <div className="col-lg-5" style={{}}>
+                    <img style={{ textAlign: 'start', width: '270px', height: '240px' }} src={blog.img} alt="no image" />
 
                 </div>
-                <div className="col-lg-7" style={{ textAlign: 'start', border: '2px solid black' }}>
+                <div className="col-lg-7" style={{ textAlign: 'start' }}>
 
                     <h6>Title: {blog.name}</h6>
-                    <small style={{ fontSize: '13px' }}>Date{ }</small>
+                    <small style={{ fontSize: '13px' }}>Posted:{blog?.postDate}</small>
                     <p>jjj:{blog.description}</p>
                     {
                         (own === 'true') ? <button style={{ backgroundColor: 'red', color: 'white', padding: '10px', borderRadius: '5px' }} onClick={() => handleDelete(blog._id)}>Delete</button> : <p>no</p>

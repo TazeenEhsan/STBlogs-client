@@ -11,7 +11,7 @@ const AboutMe = () => {
 
 
 
-            <img style={{ textAlign: 'start', width: '270px', height: '240px', border: '2px solid red' }} src={user.photoURL} alt="no image" />
+            <img style={{ textAlign: 'start', width: '270px', height: '240px' }} src={user.photoURL} alt="no image" />
 
             <p>Name: {user.displayName}</p>
             <p>Email: {user.email}</p>

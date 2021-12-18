@@ -23,12 +23,12 @@ const Home = (props) => {
 
             <div className="row">
                 <div className="col-lg-4" style={{ border: '2px solid green', paddingTop: '30px' }}>
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/createpost`}><button style={{ border: '2px solid green', color: 'goldenrod', marginBottom: '15px' }} >Create Post</button></Link> <br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/createpost`}><button style={{ border: '2px solid green', color: 'gold', backgroundColor: '#419041', borderRadius: '3px', marginBottom: '15px' }} >Create Post</button></Link> <br />
 
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/allblogs`}><button style={{ border: '2px solid green', color: 'goldenrod', marginBottom: '15px' }} >All Blogs</button></Link><br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/allblogs`}><button style={{ border: '2px solid green', color: 'gold', backgroundColor: '#419041', borderRadius: '3px', marginBottom: '15px' }} >All Blogs</button></Link><br />
 
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/myblogs`}><button style={{ border: '2px solid green', color: 'goldenrod', marginBottom: '15px' }} >My Blogs</button></Link><br />
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/aboutme`}><button style={{ border: '2px solid green', color: 'goldenrod', marginBottom: '15px' }} >Mbout Me</button></Link><br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/myblogs`}><button style={{ border: '2px solid green', color: 'gold', backgroundColor: '#419041', borderRadius: '3px', marginBottom: '15px' }} >My Blogs</button></Link><br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/aboutme`}><button style={{ border: '2px solid green', color: 'gold', backgroundColor: '#419041', borderRadius: '3px', marginBottom: '15px' }} >About Me</button></Link><br />
 
 
 

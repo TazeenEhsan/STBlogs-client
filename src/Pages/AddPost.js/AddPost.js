@@ -28,7 +28,9 @@ const AddPost = () => {
 
         const userEmail = user.email;
 
-        const newUser = { name, userEmail, description, img };
+        const postDate = new Date().toLocaleString();
+
+        const newUser = { name, userEmail, postDate, description, img };
 
 
         fetch('https://guarded-thicket-98440.herokuapp.com/blogposts', {
