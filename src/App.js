@@ -11,6 +11,10 @@ import AuthProvider from './context/AuthProvider';
 import Login from './Pages/Login/Login';
 import AllBlogPosts from './Pages/BlogPosts/AllBlogPosts/AllBlogPosts';
 import PrivateRoute from './Pages/Login/PrivateRoute';
+import Pagination from './Pages/Pagination/Pagination';
+import Register from './Pages/Login/Register';
+import AdminPannel from './Pages/AdminPannel/AdminPannel';
+import DetailedBlog from './Pages/BlogPosts/SingleBlog/DetailedBlog';
 
 
 
@@ -51,10 +55,24 @@ function App() {
             <Route path='/login'>
               <Login></Login>
             </Route>
+            <Route path='/register'>
+              <Register></Register>
+            </Route>
+
+            <Route path='/adminpannel'>
+              <AdminPannel></AdminPannel>
+            </Route>
+
+            <PrivateRoute path="/detailedBlog/:blogId">
+              <DetailedBlog></DetailedBlog>
+            </PrivateRoute>
 
 
             <Route path='/contact'>
               <Contact></Contact>
+            </Route>
+            <Route path='/page'>
+              <Pagination></Pagination>
             </Route>
 
           </Switch>

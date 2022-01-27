@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from "react"
 import initializeAuthentication from '../Firebase/firebase.init';
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, getIdToken, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile, getIdToken, signOut } from "firebase/auth";
 
 
 
@@ -12,24 +12,56 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [authError, setAuthError] = useState('');
 
-
+    const [admin, setAdmin] = useState(false);
     const [token, setToken] = useState('');
 
     const auth = getAuth();
 
     const googleProvider = new GoogleAuthProvider();
 
+    // Admin finding 
+    useEffect(() => {
 
+        fetch(`https://mighty-inlet-20908.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setAdmin(data.admin);
 
+            })
+    }, [user]);
 
+    // signup via email, pass 
+    const registerUser = (email, password, name, history) => {
+        setIsLoading(true);
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                setAuthError('');
+                const newUser = { email, displayName: name }
+                setUser(newUser);
+                // save user to the database
+                saveUser(email, name, 'POST');
+                // send name to firebase after creation
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                }).then(() => {
+                }).catch((error) => {
+                });
+                history.replace('/dashboard');
+            })
+            .catch((error) => {
+                setAuthError(error.message);
+                console.log(error);
+            })
+            .finally(() => setIsLoading(false));
+    }
 
-
+    // sign in via email pass 
     const loginUser = (email, password, location, history) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
 
-                const destination = location?.state?.from || '/';
+                const destination = location?.state?.from || '/home';
 
                 history.replace(destination);
                 setAuthError('');
@@ -40,6 +72,7 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    // sign in via google 
     const signInWithGoogle = (location, history) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
@@ -47,7 +80,7 @@ const useFirebase = () => {
                 const user = result.user;
                 setUser(user); //
 
-                const destination = location?.state?.from || '/';
+                const destination = location?.state?.from || '/home';
                 history.replace(destination);
 
                 setAuthError('');
@@ -88,17 +121,31 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    const saveUser = (email, displayName, method) => {
+
+        const user = { email, displayName };
+        fetch('https://mighty-inlet-20908.herokuapp.com/users', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then()
+
+    }
+
 
     return {
         user,
-
+        admin,
         token,
         isLoading,
         authError,
-
+        registerUser,
         signInWithGoogle,
         loginUser,
-        logOut,
+        logOut
     }
 }
 

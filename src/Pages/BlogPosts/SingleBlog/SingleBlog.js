@@ -25,6 +25,11 @@ const SingleBlog = (props) => {
         }
 
     }
+
+    const handleDetailed = (id) => {
+        // console.log('detailde id', _id)
+        history.push(`/detailedBlog/${id}`);
+    }
     console.log(props);
     return (
         <div>
@@ -37,9 +42,10 @@ const SingleBlog = (props) => {
 
                     <h6>Title: {blog.name}</h6>
                     <small style={{ fontSize: '13px' }}>Posted:{blog?.postDate}</small>
-                    <p>jjj:{blog.description}</p>
+                    <p>{blog.description}</p>
+                    <button style={{ backgroundColor: 'green', marginRight: '10px', color: 'white', padding: '5px', borderRadius: '5px' }} onClick={() => handleDetailed(blog._id)}>Details</button>
                     {
-                        (own === 'true') ? <button style={{ backgroundColor: 'red', color: 'white', padding: '10px', borderRadius: '5px' }} onClick={() => handleDelete(blog._id)}>Delete</button> : <p></p>
+                        (own === 'true') ? <button style={{ backgroundColor: 'red', color: 'white', padding: '5px', borderRadius: '5px' }} onClick={() => handleDelete(blog._id)}>Delete</button> : <p></p>
                     }
                 </div>
             </div>

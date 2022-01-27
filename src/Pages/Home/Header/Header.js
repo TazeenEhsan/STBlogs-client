@@ -16,12 +16,9 @@ const Header = () => {
 
             <div className="row gx-0">
                 <div className="col-lg-4 col-sm-12 ">
-                    <Link className="nav-con-link" to="/home"> <h4>ST Blog</h4></Link>
+                    <Link className="nav-con-link" to="/home"> <h4>ST Travel Blog</h4></Link>
 
-                    {/* <p>hi:{isLogged}</p> */}
-                    {/* <button onClick={() => dispatch(signInWithGoogle())}>Sign koro</button> */}
 
-                    {/* <button onClick={() => dispatch(outInWithGoogle())}>Sign out koro</button> */}
 
 
                 </div>
@@ -29,7 +26,7 @@ const Header = () => {
 
                     <Link className="nav-con-link" to="/home">Home</Link>
 
-                    <Link className="nav-con-link" to="/contact">Contact Me</Link>
+                    <Link className="nav-con-link" to="/contact">Contact Us</Link>
 
                     {
                         user?.displayName ? <Link style={{ textDecoration: 'none' }} to='/home'><button onClick={logOut} style={{ border: '1px solid red', color: 'red', backgroundColor: 'black' }}>Log Out</button></Link> :
@@ -39,7 +36,7 @@ const Header = () => {
 
 
 
-                    {/* <a className="nav-con-link" href="https://drive.google.com/file/d/1_F5g7i09uyqXG7hfH6N1_DGPFryKpsCg/view?usp=sharing" target="_blank">Download Resume</a> */}
+
                 </div>
 
             </div>
