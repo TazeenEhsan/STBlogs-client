@@ -22,7 +22,7 @@ const useFirebase = () => {
     // Admin finding 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(`https://guarded-thicket-98440.herokuapp.com/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin);
@@ -47,7 +47,7 @@ const useFirebase = () => {
                 }).then(() => {
                 }).catch((error) => {
                 });
-                history.replace('/dashboard');
+                history.replace('/home');
             })
             .catch((error) => {
                 setAuthError(error.message);
@@ -128,7 +128,7 @@ const useFirebase = () => {
 
         // const role = 'normal';
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://guarded-thicket-98440.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

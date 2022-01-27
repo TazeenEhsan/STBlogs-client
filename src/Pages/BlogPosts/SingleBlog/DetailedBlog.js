@@ -16,7 +16,7 @@ const DetailedBlog = () => {
     console.log(blogId);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/blogs/${blogId}`)
+        fetch(`https://guarded-thicket-98440.herokuapp.com/blogs/${blogId}`)
             .then(res => res.json())
             .then(data => {
                 setBlog(data);

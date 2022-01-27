@@ -18,7 +18,7 @@ const Pagination = () => {
     const pageHandler = (pageNumber) => {
 
         setPerPage(data.slice((pageNumber - 1) * 10, pageNumber * 10))
-        console.log('clicked', pageNumber);
+        // console.log('clicked', pageNumber);
     }
 
 

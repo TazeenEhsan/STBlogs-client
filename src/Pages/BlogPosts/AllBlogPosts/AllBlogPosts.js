@@ -11,7 +11,7 @@ const AllBlogPosts = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/user/blogs')
+        fetch('https://guarded-thicket-98440.herokuapp.com/user/blogs')
             .then(res => res.json())
             .then(data => {
                 setData(data);

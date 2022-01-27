@@ -18,7 +18,7 @@ const ManageAllPosts = () => {
     console.log(changes);
 
     useEffect(() => {
-        fetch('http://localhost:5000/blogs')
+        fetch('https://guarded-thicket-98440.herokuapp.com/blogs')
             .then(res => res.json())
             .then(data => {
                 setData(data);
