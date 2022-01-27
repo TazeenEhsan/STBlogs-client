@@ -22,7 +22,7 @@ const useFirebase = () => {
     // Admin finding 
     useEffect(() => {
 
-        fetch(`https://mighty-inlet-20908.herokuapp.com/users/${user.email}`)
+        fetch(`http://localhost:5000/users/${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setAdmin(data.admin);
@@ -30,6 +30,7 @@ const useFirebase = () => {
             })
     }, [user]);
 
+    console.log('admin', admin);
     // signup via email, pass 
     const registerUser = (email, password, name, history) => {
         setIsLoading(true);
@@ -79,6 +80,7 @@ const useFirebase = () => {
             .then((result) => {
                 const user = result.user;
                 setUser(user); //
+                saveUser(user.email, user.displayName, 'PUT');
 
                 const destination = location?.state?.from || '/home';
                 history.replace(destination);
@@ -123,8 +125,10 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, method) => {
 
+
+        // const role = 'normal';
         const user = { email, displayName };
-        fetch('https://mighty-inlet-20908.herokuapp.com/users', {
+        fetch('http://localhost:5000/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

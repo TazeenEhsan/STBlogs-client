@@ -9,7 +9,7 @@ import './Header.css'
 
 const Header = () => {
 
-    const { user, logOut } = useAuth();
+    const { user, admin, logOut } = useAuth();
 
     return (
         <div className="pt-5" style={{ backgroundColor: 'black', padding: '5px' }}>
@@ -25,6 +25,7 @@ const Header = () => {
                 <div className="col-lg-8 col-sm-12">
 
                     <Link className="nav-con-link" to="/home">Home</Link>
+                    {admin && <Link className="nav-con-link" to="/adminpannel">Admin Pannel</Link>}
 
                     <Link className="nav-con-link" to="/contact">Contact Us</Link>
 

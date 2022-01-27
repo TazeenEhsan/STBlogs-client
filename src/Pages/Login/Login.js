@@ -58,6 +58,8 @@ const Login = () => {
                                     </NavLink>
                                 </form>
                             }
+                            {authError && <p>{authError}</p>}
+
 
                         </div>
                     </div>

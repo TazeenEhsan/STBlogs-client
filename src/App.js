@@ -15,6 +15,7 @@ import Pagination from './Pages/Pagination/Pagination';
 import Register from './Pages/Login/Register';
 import AdminPannel from './Pages/AdminPannel/AdminPannel';
 import DetailedBlog from './Pages/BlogPosts/SingleBlog/DetailedBlog';
+import AdminRoute from './Pages/Login/AdminRoute';
 
 
 
@@ -59,9 +60,9 @@ function App() {
               <Register></Register>
             </Route>
 
-            <Route path='/adminpannel'>
+            <AdminRoute path='/adminpannel'>
               <AdminPannel></AdminPannel>
-            </Route>
+            </AdminRoute>
 
             <PrivateRoute path="/detailedBlog/:blogId">
               <DetailedBlog></DetailedBlog>

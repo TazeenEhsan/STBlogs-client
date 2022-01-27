@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-
+import { Alert } from 'bootstrap';
 
 const SingleBlog = (props) => {
+    const [success, setSuccess] = useState(false);
 
-    const { blog, own } = props;
+    const { blog, own, handleAnyChange } = props;
     const history = useHistory();
 
     const handleDelete = (id) => {
@@ -17,11 +18,31 @@ const SingleBlog = (props) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-
+                        setSuccess(true);
+                        handleAnyChange('yes');
                         alert('delete success');
                         history.push('/home');
                     }
                 });
+        }
+
+    }
+    const handleUpdateStatus = (id) => {
+        const proceed = window.confirm('Are you sure, you want to update?');
+        if (proceed) {
+            const url = `https://guarded-thicket-98440.herokuapp.com/blogs/${id}`;
+            fetch(url, {
+                method: 'PUT'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.modifiedCount > 0) {
+                        handleAnyChange('yes');
+                        alert('delete success');
+                        history.push('/adminpannel/manageblogs');
+                    }
+                }
+                );
         }
 
     }
@@ -43,10 +64,42 @@ const SingleBlog = (props) => {
                     <h6>Title: {blog.name}</h6>
                     <small style={{ fontSize: '13px' }}>Posted:{blog?.postDate}</small>
                     <p>{blog.description}</p>
-                    <button style={{ backgroundColor: 'green', marginRight: '10px', color: 'white', padding: '5px', borderRadius: '5px' }} onClick={() => handleDetailed(blog._id)}>Details</button>
+
+                    {
+
+                        (own === 'detailed') ? <>
+                            <p> category{blog?.category}</p>
+                            <p>Short info-{blog?.info}</p>
+                            <p>Location:{blog?.location}</p>
+                            <p>Cost:{blog?.cost}</p>
+                            <p>Rating:{blog?.rating}</p>
+                        </> :
+                            <></>
+                    }
+
+                    {
+                        (own === 'admin') ? <p>Status: {blog?.status}</p> : <p></p>
+                    }
+                    {
+                        (own === 'true') ? <p>Status: {blog?.status}</p> : <p></p>
+                    }
+
+
+                    {
+                        (own !== 'detailed') && < button style={{ backgroundColor: 'green', marginRight: '10px', color: 'white', padding: '5px', borderRadius: '5px' }} onClick={() => handleDetailed(blog._id)}>Details</button>
+                    }
                     {
                         (own === 'true') ? <button style={{ backgroundColor: 'red', color: 'white', padding: '5px', borderRadius: '5px' }} onClick={() => handleDelete(blog._id)}>Delete</button> : <p></p>
                     }
+                    {
+                        (own === 'admin') ? <button style={{ backgroundColor: 'red', color: 'white', padding: '5px', borderRadius: '5px' }} onClick={() => handleDelete(blog._id)}>Delete</button> : <p></p>
+                    }
+                    {
+                        (own === 'admin') ? <button style={{ backgroundColor: 'blue', color: 'white', padding: '5px', borderRadius: '5px' }} onClick={() => handleUpdateStatus(blog._id)}>Status Update</button> : <p></p>
+                    }
+
+
+                    {success && <Alert severity="success">Status updated successfully!</Alert>}
                 </div>
             </div>
 
