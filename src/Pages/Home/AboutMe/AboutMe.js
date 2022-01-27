@@ -4,7 +4,7 @@ import useAuth from '../../../hooks/useAuth';
 const AboutMe = () => {
 
     const { user, admin } = useAuth();
-    console.log(user);
+    // console.log(user);
     return (
         <div>
 

@@ -15,7 +15,7 @@ const Login = () => {
 
     const { user, loginUser, isLoading, authError, signInWithGoogle } = useAuth();
 
-    console.log(user);
+    // console.log(user);
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -28,7 +28,7 @@ const Login = () => {
         loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
     }
-    console.log(loginData);
+    // console.log(loginData);
     return (
         <div className='container'>
 

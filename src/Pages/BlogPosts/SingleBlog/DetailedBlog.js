@@ -13,14 +13,14 @@ const DetailedBlog = () => {
     const handleReturn = () => {
         history.push('/home');
     }
-    console.log(blogId);
+    // console.log(blogId);
 
     useEffect(() => {
         fetch(`https://guarded-thicket-98440.herokuapp.com/blogs/${blogId}`)
             .then(res => res.json())
             .then(data => {
                 setBlog(data);
-                console.log(data);
+                // console.log(data);
 
             })
     }, []);

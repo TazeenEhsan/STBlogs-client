@@ -15,7 +15,7 @@ const ManageAllPosts = () => {
     }
 
 
-    console.log(changes);
+    // console.log(changes);
 
     useEffect(() => {
         fetch('https://guarded-thicket-98440.herokuapp.com/blogs')
@@ -30,7 +30,7 @@ const ManageAllPosts = () => {
     const pageHandler = (pageNumber) => {
 
         setPerPage(data.slice((pageNumber - 1) * 10, pageNumber * 10))
-        console.log('clicked', pageNumber);
+        // console.log('clicked', pageNumber);
     }
 
 

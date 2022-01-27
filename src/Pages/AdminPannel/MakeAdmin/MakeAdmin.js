@@ -16,7 +16,7 @@ const MakeAdmin = () => {
     const history = useHistory();
 
     const handleOnBlur = e => {
-        console.log(e.target.value);
+        // console.log(e.target.value);
         setEmail(e.target.value);
     }
 
@@ -32,7 +32,7 @@ const MakeAdmin = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    console.log(data);
+                    // console.log(data);
                     alert('Successfully Create an admins')
                     history.push('/adminpannel');
                     setSuccess(true);

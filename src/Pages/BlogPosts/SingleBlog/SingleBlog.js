@@ -51,7 +51,7 @@ const SingleBlog = (props) => {
         // console.log('detailde id', _id)
         history.push(`/detailedBlog/${id}`);
     }
-    console.log(props);
+    // console.log(props);
     return (
         <div>
             <div className="row" style={{ paddingBottom: '5px', border: '2px solid black', marginBottom: '5px' }}>

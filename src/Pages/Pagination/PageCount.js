@@ -7,7 +7,7 @@ const PageCount = ({ dataLength, pageHandler }) => {
     for (let i = 1; i < Math.ceil(dataLength / 10) + 1; i++) {
         pageNumbers.push(i)
     }
-    console.log(pageNumbers);
+    // console.log(pageNumbers);
     return (
         <div>
             {

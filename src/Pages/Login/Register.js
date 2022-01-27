@@ -28,7 +28,7 @@ const Register = () => {
         e.preventDefault();
     }
 
-    console.log(loginData);
+    // console.log(loginData);
 
 
     return (

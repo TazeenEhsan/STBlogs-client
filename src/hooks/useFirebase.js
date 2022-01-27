@@ -30,7 +30,7 @@ const useFirebase = () => {
             })
     }, [user]);
 
-    console.log('admin', admin);
+    // console.log('admin', admin);
     // signup via email, pass 
     const registerUser = (email, password, name, history) => {
         setIsLoading(true);
@@ -51,7 +51,7 @@ const useFirebase = () => {
             })
             .catch((error) => {
                 setAuthError(error.message);
-                console.log(error);
+                // console.log(error);
             })
             .finally(() => setIsLoading(false));
     }

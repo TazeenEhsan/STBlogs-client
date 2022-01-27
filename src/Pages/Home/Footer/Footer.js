@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
 
     const date = new Date().toLocaleString();
-    console.log(date);
+    // console.log(date);
     return (
         <div className="mt-5" style={{ backgroundColor: 'black', color: 'gold' }}>
             <div className="row text-start p-5">
