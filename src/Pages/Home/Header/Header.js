@@ -12,14 +12,11 @@ const Header = () => {
     const { user, admin, logOut } = useAuth();
 
     return (
-        <div className="pt-5" style={{ backgroundColor: 'black', padding: '5px' }}>
+        <div style={{ backgroundColor: 'black', paddingTop: '15px' }}>
 
             <div className="row gx-0">
                 <div className="col-lg-4 col-sm-12 ">
                     <Link className="nav-con-link" to="/home"> <h4>ST Travel Blog</h4></Link>
-
-
-
 
                 </div>
                 <div className="col-lg-8 col-sm-12">
@@ -33,10 +30,6 @@ const Header = () => {
                         user?.displayName ? <Link style={{ textDecoration: 'none' }} to='/home'><button onClick={logOut} style={{ border: '1px solid red', color: 'red', backgroundColor: 'black' }}>Log Out</button></Link> :
                             <Link className="nav-con-link" to="/login">Login</Link>
                     }
-
-
-
-
 
                 </div>
 

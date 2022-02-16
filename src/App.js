@@ -21,7 +21,7 @@ import AdminRoute from './Pages/Login/AdminRoute';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundColor: '#47597E' }}>
 
       <AuthProvider>
         <BrowserRouter>
@@ -29,22 +29,6 @@ function App() {
           <Header></Header>
 
           <Switch>
-
-            {/* <Route exact path="/">
-              <AllBlogPosts></AllBlogPosts>
-            </Route>
-            <PrivateRoute path='/home'>
-              <Home></Home>
-            </PrivateRoute>
-
-            <PrivateRoute path='/login'>
-              <Login></Login>
-            </PrivateRoute>
-
-
-            <PrivateRoute path='/contact'>
-              <Contact></Contact>
-            </PrivateRoute> */}
 
             <Route exact path="/">
               <Login></Login>

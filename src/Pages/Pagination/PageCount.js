@@ -13,7 +13,7 @@ const PageCount = ({ dataLength, pageHandler }) => {
             {
                 pageNumbers.map(page => <button
                     onClick={() => pageHandler(page)}
-                    style={{ backgroundColor: 'green', marginRight: '10px', color: 'white', padding: '5px', borderRadius: '5px' }}
+                    style={{ backgroundColor: 'black', marginRight: '10px', color: 'white', padding: '5px', borderRadius: '5px' }}
 
                 >{page}</button>)
             }

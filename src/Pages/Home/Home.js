@@ -20,22 +20,23 @@ const Home = (props) => {
     let { path, url } = useRouteMatch();
 
     return (
-        <div className="mt-5 container">
+        <div className="mt-5" style={{ backgroundColor: '#47597e' }}>
             <Banner></Banner>
+            <hr style={{ borderTop: '3px solid black' }} />
 
-            <div className="row p-2">
-                <div className="col-lg-4" style={{ border: '2px solid green', paddingTop: '30px' }}>
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/createpost`}><button style={{ border: '2px solid green', color: 'gold', backgroundColor: '#419041', borderRadius: '3px', marginBottom: '15px' }} >Create Post</button></Link> <br />
+            <div className="row p-2 ms-2" style={{ border: '' }}>
+                <div className="col-lg-2" style={{ borderRight: '3px solid black', paddingTop: '30px' }}>
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/createpost`}><button style={{ border: '2px solid green', color: 'wheat', backgroundColor: '#3b4966', borderRadius: '3px', marginBottom: '15px', width: '123px' }} >Create Post</button></Link> <br />
 
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/allblogs`}><button style={{ border: '2px solid green', color: 'gold', backgroundColor: '#419041', borderRadius: '3px', marginBottom: '15px' }} >All Blogs</button></Link><br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/allblogs`}><button style={{ border: '2px solid green', color: 'wheat', backgroundColor: '#3b4966', borderRadius: '3px', marginBottom: '15px', width: '123px' }} >All Blogs</button></Link><br />
 
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/myblogs`}><button style={{ border: '2px solid green', color: 'gold', backgroundColor: '#419041', borderRadius: '3px', marginBottom: '15px' }} >My Blogs</button></Link><br />
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/aboutme`}><button style={{ border: '2px solid green', color: 'gold', backgroundColor: '#419041', borderRadius: '3px', marginBottom: '15px' }} >About Me</button></Link><br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/myblogs`}><button style={{ border: '2px solid green', color: 'wheat', backgroundColor: '#3b4966', borderRadius: '3px', marginBottom: '15px', width: '123px' }} >My Blogs</button></Link><br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/aboutme`}><button style={{ border: '2px solid green', color: 'wheat', backgroundColor: '#3b4966', borderRadius: '3px', marginBottom: '15px', width: '123px' }} >About Me</button></Link><br />
 
 
 
                 </div>
-                <div className="col-lg-8" style={{ border: '2px solid green', paddingBottom: '10px' }}>
+                <div className="col-lg-9" style={{ backgroundColor: '#3b4966', paddingBottom: '10px' }}>
 
                     <Switch>
                         <PrivateRoute exact path={path}>

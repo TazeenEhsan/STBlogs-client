@@ -24,22 +24,24 @@ const AdminPannel = () => {
 
 
     return (
-        <div className="mt-5 container">
+        <div className="mt-5">
 
-            <div className="row">
-                <div className="col-lg-4" style={{ border: '2px solid green', paddingTop: '30px' }}>
+            <div className="row  ms-2">
+                <div className="col-lg-2" style={{ borderRight: '3px solid black', paddingTop: '10px' }}>
                     <br />
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/makeadmin`}><button style={{ border: '2px solid green', color: 'gold', backgroundColor: '#419041', borderRadius: '3px', marginBottom: '15px' }} >Make Admin </button></Link> <br />
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/manageblogs`}><button style={{ border: '2px solid green', color: 'gold', backgroundColor: '#419041', borderRadius: '3px', marginBottom: '15px' }} >Manage Blogs</button></Link><br />
 
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/myblogs`}><button style={{ border: '2px solid green', color: 'gold', backgroundColor: '#419041', borderRadius: '3px', marginBottom: '15px' }} >My Blogs</button></Link><br />
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/createpost`}><button style={{ border: '2px solid green', color: 'gold', backgroundColor: '#419041', borderRadius: '3px', marginBottom: '15px' }} >Create Blog Post </button></Link> <br />
-                    <Link style={{ textDecoration: 'none' }} to={`${url}/aboutme`}><button style={{ border: '2px solid green', color: 'gold', backgroundColor: '#419041', borderRadius: '3px', marginBottom: '15px' }} >About Me</button></Link><br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/makeadmin`}><button style={{ border: '2px solid green', color: 'wheat', backgroundColor: '#3b4966', borderRadius: '3px', marginBottom: '15px', width: '163px' }} >Make Admin </button></Link> <br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/manageblogs`}><button style={{ border: '2px solid green', color: 'wheat', backgroundColor: '#3b4966', borderRadius: '3px', marginBottom: '15px', width: '163px' }} >Manage Blogs</button></Link><br />
+
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/myblogs`}><button style={{ border: '2px solid green', color: 'wheat', backgroundColor: '#3b4966', borderRadius: '3px', marginBottom: '15px', width: '163px' }} >My Blogs</button></Link><br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/createpost`}><button style={{ border: '2px solid green', color: 'wheat', backgroundColor: '#3b4966', borderRadius: '3px', marginBottom: '15px', width: '163px' }} >Create Blog Post </button></Link> <br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/aboutme`}><button style={{ border: '2px solid green', color: 'wheat', backgroundColor: '#3b4966', borderRadius: '3px', marginBottom: '15px', width: '163px' }} >About Me</button></Link><br />
+
 
 
 
                 </div>
-                <div className="col-lg-8" style={{ border: '2px solid green' }}>
+                <div className="col-lg-9" style={{ backgroundColor: '#3b4966', color: 'wheat', paddingTop: '20px', paddingBottom: '10px' }}>
 
                     <Switch>
                         <Route exact path={path}>

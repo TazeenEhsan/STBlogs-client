@@ -21,7 +21,7 @@ const SingleBlog = (props) => {
                         setSuccess(true);
                         handleAnyChange('yes');
                         alert('delete success');
-                        history.push('/home');
+                        // history.push('/home');
                     }
                 });
         }
@@ -38,7 +38,7 @@ const SingleBlog = (props) => {
                 .then(data => {
                     if (data.modifiedCount > 0) {
                         handleAnyChange('yes');
-                        alert('delete success');
+                        alert('update success');
                         history.push('/adminpannel/manageblogs');
                     }
                 }
@@ -53,10 +53,10 @@ const SingleBlog = (props) => {
     }
     // console.log(props);
     return (
-        <div>
-            <div className="row" style={{ paddingBottom: '5px', border: '2px solid black', marginBottom: '5px' }}>
+        <div style={{ width: '100%' }} >
+            <div className="row" style={{ color: '#32d7d1', borderRadius: '10px', marginLeft: '2px', marginRight: '3px', backgroundColor: '#47597e', paddingTop: '15px', paddingBottom: '10px', marginBottom: '15px' }}>
                 <div className="col-lg-5" style={{}}>
-                    <img style={{ textAlign: 'start', width: '270px', height: '240px' }} src={blog.img} alt="no image" />
+                    <img style={{ textAlign: 'start', width: '270px', height: '240px', borderRadius: '18px', border: '3px dotted black' }} src={blog.img} alt="no image" />
 
                 </div>
                 <div className="col-lg-7" style={{ textAlign: 'start' }}>
@@ -99,11 +99,11 @@ const SingleBlog = (props) => {
                     }
 
 
-                    {success && <Alert severity="success">Status updated successfully!</Alert>}
+                    {/* {success && <Alert severity="success">Status updated successfully!</Alert>} */}
                 </div>
             </div>
 
-        </div>
+        </div >
     );
 };
 

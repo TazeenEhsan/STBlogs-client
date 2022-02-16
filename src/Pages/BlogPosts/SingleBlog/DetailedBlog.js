@@ -8,10 +8,15 @@ const DetailedBlog = () => {
     const [blog, setBlog] = useState({});
     const [changes, setChanges] = useState({});
 
+    const location = useHistory();
 
-    const history = useHistory();
+    console.log(location);
+
+
+
     const handleReturn = () => {
-        history.push('/home');
+        // history.push('/home');
+        location.goBack();
     }
     // console.log(blogId);
 
@@ -31,7 +36,7 @@ const DetailedBlog = () => {
     }
 
     return (
-        <div className='container m-5'>
+        <div className='container m-5' style={{ backgroundColor: '#3b4966', padding: '20px' }}>
 
             <SingleBlog handleAnyChange={handleAnyChange} blog={blog} own={'detailed'}></SingleBlog>
             <button style={{ backgroundColor: 'green', marginRight: '10px', color: 'white', padding: '5px', borderRadius: '5px' }} onClick={handleReturn}>Return</button>

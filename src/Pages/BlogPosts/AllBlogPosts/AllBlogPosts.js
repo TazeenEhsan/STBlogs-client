@@ -33,7 +33,7 @@ const AllBlogPosts = () => {
 
     return (
         <div>
-            <h1>All Blogs {data.length}</h1>
+            <h1 style={{ color: '#32d7d1' }}>Blog Posts</h1>
             {
                 perPage.map(blog => <SingleBlog handleAnyChange={handleAnyChange} blog={blog} own={''}></SingleBlog>)
             }

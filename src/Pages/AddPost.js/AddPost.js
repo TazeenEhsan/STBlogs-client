@@ -59,7 +59,7 @@ const AddPost = () => {
             .then(data => {
                 if (data.insertedId) {
                     // alert('Successfully added the user.')
-                    // swal("Successfully added New Product!!!");
+                    alert("Successfully added New Blog!!!");
                     e.target.reset();
                     history.push('/home')
                 }
@@ -69,24 +69,27 @@ const AddPost = () => {
     }
     return (
         <div>
-            <h2>New Post</h2>
+            <h2>Create New Blog</h2>
             <div className="container adding-form">
                 <form onSubmit={handleAddUser}>
-                    <input type="text" ref={nameRef} placeholder="Post Title" required /> <br />
-                    <input type="text" ref={imgRef} placeholder="Image URL" required />
-
-
-
-                    <input type="text" ref={infoRef} placeholder="Short Info" required />
-                    <input type="text" ref={categoryRef} placeholder="Category" required />
-                    <input type="number" ref={costRef} placeholder="Cost" required />
+                    <input type="text" ref={nameRef} placeholder="Post Title" required />
                     <input type="text" ref={locationRef} placeholder="Location" required />
+                    <input type="text" ref={imgRef} placeholder="Image URL" required />
+                    <input type="text" ref={categoryRef} placeholder="Category" required />
+
+                    <input type="text" style={{ width: '85%' }} ref={infoRef} placeholder="Short Info" required />
+
+
+                    <input type="number" ref={costRef} placeholder="Cost" required />
                     <input type="number" ref={ratingRef} placeholder="Rating for this" required />
 
-                    <textarea name="message" className="" ref={descriptionRef} placeholder="Content Description" required></textarea>
+
+                    <textarea style={{ width: '85%' }} name="message" className="" ref={descriptionRef} placeholder="Content Description" required></textarea>
 
 
-                    <br /><button className="btn btn-danger" type="submit">Create</button>
+
+
+                    <br /><button className="btn btn-success" type="submit">Create</button>
                 </form>
             </div>
 

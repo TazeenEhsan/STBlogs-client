@@ -5,7 +5,7 @@ import SingleBlog from '../SingleBlog/SingleBlog';
 const MyBlogs = () => {
 
     const [blogs, setBlogs] = useState([]);
-    const [changes, setChanges] = useState({});
+    const [changes, setChanges] = useState('no');
 
     const { user } = useFirebase();
 
@@ -25,7 +25,7 @@ const MyBlogs = () => {
 
     return (
         <div>
-            <h1>My Blogs {filtered?.length}</h1>
+            <h1 style={{ color: '#32d7d1' }}>My Blogs </h1>
 
             {
                 filtered.map(blog => <SingleBlog handleAnyChange={handleAnyChange} blog={blog} own={'true'}></SingleBlog>)

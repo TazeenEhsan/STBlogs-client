@@ -52,17 +52,18 @@ const MakeAdmin = () => {
             <form onSubmit={handleAdminSubmit}>
 
                 <input
-                    style={{ width: '70%', border: '1px solid red' }}
+                    style={{ width: '60%', border: '1px solid red', borderRadius: '4px' }}
                     label="Type an user's Email"
                     type="email"
+                    placeholder='Enter email of new admin'
                     onBlur={handleOnBlur}
                     variant="standard" required />
                 <br />
+
                 <br />
-                <br />
-                <button type="submit" variant="contained">Make Admin</button>
+                <button type="submit" className="btn btn-success">Make Admin</button>
             </form>
-            {success && <Alert severity="success">Made Admin successfully!</Alert>}
+            {/* {success && <Alert severity="success">Made Admin successfully!</Alert>} */}
         </div>
     );
 };

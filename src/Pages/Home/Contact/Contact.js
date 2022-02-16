@@ -22,8 +22,8 @@ const Contact = () => {
 
 
     return (
-        <div>
-            <h1>Send Email for contact</h1>
+        <div style={{ color: 'white' }}>
+            <h1>Send Email to contact with us</h1>
             <form ref={form} onSubmit={sendEmail}>
 
                 <input style={{ width: '340px', margin: '10px' }} type="text" name="user_name" placeholder="Your Name" required /><br />
